@@ -20,7 +20,7 @@ function account() {
 
 export default account
 
-export const getServerSideProps = async (context) =>{
+export const getServerSideProps = async (context:any) =>{
     const session =  await getSession(context)
     if(!session){
         return {
