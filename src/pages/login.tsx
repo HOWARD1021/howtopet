@@ -8,8 +8,8 @@ const Login: NextPage = () => {
     return (
       <div>
         Signed in as {session.user?.email} <br />
-        <Image src={session.user?.image}
-           height={100} width={100} />
+        {/* <Image src={session.user?.image}
+           height={100} width={100} /> */}
         <button onClick={() => signOut()}>Sign out</button>
       </div>
     )
@@ -23,7 +23,7 @@ const Login: NextPage = () => {
 }
 export default Login
 
-export const getServerSideProps = async (context) =>{
+export const getServerSideProps = async (context:any) =>{
   const session =  await getSession(context)
   if(session){
       return {
